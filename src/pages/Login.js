@@ -17,7 +17,7 @@ export default function Login(props){
 	function authenticate(e){
 		e.preventDefault();
 
-		fetch('http://localhost:4000/users/login', {
+		fetch('http://tranquil-sierra-40350.herokuapp.com/users/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ export default function Login(props){
 
 
 	const retrieveUserDetails = (token) => {
-		fetch('http://localhost:4000/users/details', {
+		fetch('http://tranquil-sierra-40350.herokuapp.com/users/details', {
 			headers: {
 				Authorization: `Bearer ${ token }`
 			}

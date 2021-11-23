@@ -19,7 +19,7 @@ export default function OrderHistory(prop){
 
 
 	useEffect(() => {
-		fetch(`http://localhost:4000/users/${endpoint}`, {
+		fetch(`http://tranquil-sierra-40350.herokuapp.com/users/${endpoint}`, {
 			headers: {
 				Authorization: `Bearer ${ user.token }`
 			}

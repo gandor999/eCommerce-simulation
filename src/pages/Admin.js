@@ -32,7 +32,7 @@ export default function Admin(){
 	console.log(filterInput)
 
 	useEffect(() => {
-		fetch('http://localhost:4000/products/allBoth', {
+		fetch('http://tranquil-sierra-40350.herokuapp.com/products/allBoth', {
 			headers: {
 				Authorization: `Bearer ${ user.token }`
 			}
@@ -59,7 +59,7 @@ export default function Admin(){
 
 		let endpoint = 'orders';
 
-		fetch(`http://localhost:4000/users/${endpoint}`, {
+		fetch(`http://tranquil-sierra-40350.herokuapp.com/users/${endpoint}`, {
 			headers: {
 				Authorization: `Bearer ${ user.token }`
 			}
@@ -103,7 +103,7 @@ export default function Admin(){
 
 
 	function createProduct(){
-		fetch(`http://localhost:4000/products`, {
+		fetch(`http://tranquil-sierra-40350.herokuapp.com/products`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

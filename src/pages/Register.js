@@ -28,7 +28,7 @@ export default function Register(){
 	function registerUser(e){
 		e.preventDefault();
 
-		fetch('http://localhost:4000/users/register', {
+		fetch('http://tranquil-sierra-40350.herokuapp.com/users/register', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
