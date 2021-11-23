@@ -28,6 +28,7 @@ function App() {
   const [detectChange, setDetectChange] = useState(false);
   const [ filterInput, setFilterInput ] = useState('');
   const [ api, setApi ] = useState('https://tranquil-sierra-40350.herokuapp.com');
+  const [ peekingToken, setPeekingToken ] = useState('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTc0NDUzMDM2NzRlMDEwMWVkODlhMCIsImVtYWlsIjoiZ2dAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjM3NTY2MzU2fQ.cvC7QR0w46OBVukd1Eo-iX2UKcN2Ea1-nv5xcRTtbdg'); 
 
   console.log(detectChange)
 
@@ -56,7 +57,8 @@ function App() {
       filterInput, 
       setFilterInput,
       api,
-      setApi
+      setApi,
+      peekingToken
     }}>
       <Router>
         <AppNavbar />
