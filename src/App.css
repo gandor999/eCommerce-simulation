@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding:  0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+/*#root {
+  background-color: #61E786;
+}*/
+
+/*.accept {
+  background-color: #F7D002
+}*/
+
+#order-header #order-header-content {
+  background: #FFB20F;
+}
+
+#admin-header #admin-header-content {
+  background: #FFB20F;
+}
+
+.cardHighlight {
+  min-height: 100%;
+
+}
+
+.image-fluid {
+  cursor: pointer;
+}
+
+.title-card {
+  cursor: pointer;
+}
+
+.provider {
+  display: none;
+}
+
+.banner #hello{
+  background: #FFB20F;
+  width: 160px;
+}
+
+.banner #para {
+  background: #35A7FF;
+}
+
+.banner #para p{
+  color: #0F110C;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+@media (max-width: 753px){
+  .banner #para p{
+    color: #0F110C;
+    font-weight: bold;
+    font-size: 55%;
+  }
+}
+
+.banner #para2 {
+  background: #FFB20F;
+  width: 25%;
+}
+
+.banner #para2 h4{
+  color: #0F110C;
+  font-weight: bold;
+  font-size: 125%;
+}
+
+@media (max-width: 753px){
+  .banner #para2 p{
+    color: #0F110C;
+    font-weight: bold;
+    font-size: 55%;
+  }
+}
+
+.banner #para3 {
+  background: #FFB20F;
+  width: 25%;
+}
+
+.banner #para3 h4{
+  color: #0F110C;
+  font-weight: bold;
+  font-size: 125%;
+}
+
+@media (max-width: 753px){
+  .banner #para3 p{
+    color: #0F110C;
+    font-weight: bold;
+    font-size: 55%;
+  }
+}
+
+.banner #para4 {
+  background: #2DD881;
+  width: 25%;
+}
+
+.banner #para4 h4{
+  color: #0F110C;
+  font-weight: bold;
+  font-size: 125%;
+}
+
+@media (max-width: 753px){
+  .banner #para4 p{
+    color: #0F110C;
+    font-weight: bold;
+    font-size: 55%;
+  }
+}
+
+
+.product-header {
+  background-color: #FFB20F;
+}
+
+
+/*.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}*/
+
+
+
+
+/*.row, .cart {
+    margin-top: 25px;
+
+    -webkit-animation: fadein 2s; 
+       -moz-animation: fadein 2s;
+        -ms-animation: fadein 2s; 
+         -o-animation: fadein 2s;
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+ Firefox < 16 
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}*/
