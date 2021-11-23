@@ -53,7 +53,8 @@ export default function Admin(){
 						)
 					})
 				);
-			
+				
+				setDetectChange(false);
 			
 		})
 
@@ -94,9 +95,11 @@ export default function Admin(){
 						)
 					})
 				);
+
+				setDetectChange(false);
 		})
 
-		setDetectChange(false);
+		
 		
 	}, [filterInput, detectChange])
 
@@ -152,6 +155,7 @@ export default function Admin(){
 	function viewAllOrders(e){
 		e.preventDefault();
 		setRoute('orders'); 
+		setDetectChange(true);
 	}
 
 	return (
