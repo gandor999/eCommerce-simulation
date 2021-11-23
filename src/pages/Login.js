@@ -18,7 +18,6 @@ export default function Login(props){
 		e.preventDefault();
 
 		fetch(`${api}/users/login`, {
-			
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
