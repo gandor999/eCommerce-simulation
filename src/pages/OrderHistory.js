@@ -20,6 +20,7 @@ export default function OrderHistory(prop){
 
 	useEffect(() => {
 		fetch(`https://tranquil-sierra-40350.herokuapp.com/users/${endpoint}`, {
+			mode: 'no-cors',
 			headers: {
 				Authorization: `Bearer ${ user.token }`
 			}

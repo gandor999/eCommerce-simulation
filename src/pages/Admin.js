@@ -33,6 +33,7 @@ export default function Admin(){
 
 	useEffect(() => {
 		fetch('https://tranquil-sierra-40350.herokuapp.com/products/allBoth', {
+			mode: 'no-cors',
 			headers: {
 				Authorization: `Bearer ${ user.token }`
 			}

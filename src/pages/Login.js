@@ -18,6 +18,7 @@ export default function Login(props){
 		e.preventDefault();
 
 		fetch('https://tranquil-sierra-40350.herokuapp.com/users/login', {
+			mode: 'no-cors',
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

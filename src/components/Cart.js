@@ -72,6 +72,7 @@ export default function Cart (prop){
 		
 
 		fetch('https://tranquil-sierra-40350.herokuapp.com/users/checkout', {
+			mode: 'no-cors',
 			method: 'POST',
 			headers: {
 				Authorization: `Bearer ${ user.token }`,

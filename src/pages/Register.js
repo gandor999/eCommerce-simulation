@@ -29,6 +29,7 @@ export default function Register(){
 		e.preventDefault();
 
 		fetch('https://tranquil-sierra-40350.herokuapp.com/users/register', {
+			mode: 'no-cors',
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
