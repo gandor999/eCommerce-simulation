@@ -7,7 +7,7 @@ export default function ProductDatum(prop){
 
 	let { datum } = prop;
 	let content = [];
-	const { forceRender, setForceRender, user, setUser, api } = useContext(UserContext);
+	const { forceRender, setForceRender, user, setUser, api, detectChange, setDetectChange } = useContext(UserContext);
 	const [ isActive, setIsActive ] = useState(datum.isActive);
 	const [ productName, setProductName ] = useState(datum.name);
 	const [ productPrice, setProductPrice ] = useState(datum.price);
@@ -23,6 +23,10 @@ export default function ProductDatum(prop){
     const handleShow2 = () => setShow2(true);
 
 	console.log(isActive);
+
+	useEffect(() => {
+		setDetectChange(false);
+	}, [detectChange])
 
 	function updateIsActiveStatus(){
 		setIsActive(!isActive);
@@ -64,6 +68,7 @@ export default function ProductDatum(prop){
 					icon: "success",
 					text: "Congrats!"
 				})
+				setDetectChange(true);
 				handleClose();
 			}
 
@@ -110,6 +115,7 @@ export default function ProductDatum(prop){
 				setProductPrice(productPrice);
 				setProductDescription(productDescription);
 				setProductImage(productImage);
+				setDetectChange(true);
 
 				handleClose2();
 			}
