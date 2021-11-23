@@ -28,7 +28,7 @@ export default function Product(){
 
 
 	useEffect(() => {
-		fetch('http://tranquil-sierra-40350.herokuapp.com/products/all', {
+		fetch('https://tranquil-sierra-40350.herokuapp.com/products/all', {
 			headers: {
 				Authorization: `Bearer ${ peekingToken }`
 			}

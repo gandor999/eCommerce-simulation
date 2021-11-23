@@ -32,7 +32,7 @@ export default function Admin(){
 	console.log(filterInput)
 
 	useEffect(() => {
-		fetch('http://tranquil-sierra-40350.herokuapp.com/products/allBoth', {
+		fetch('https://tranquil-sierra-40350.herokuapp.com/products/allBoth', {
 			headers: {
 				Authorization: `Bearer ${ user.token }`
 			}
@@ -59,7 +59,7 @@ export default function Admin(){
 
 		let endpoint = 'orders';
 
-		fetch(`http://tranquil-sierra-40350.herokuapp.com/users/${endpoint}`, {
+		fetch(`https://tranquil-sierra-40350.herokuapp.com/users/${endpoint}`, {
 			headers: {
 				Authorization: `Bearer ${ user.token }`
 			}
@@ -103,7 +103,7 @@ export default function Admin(){
 
 
 	function createProduct(){
-		fetch(`http://tranquil-sierra-40350.herokuapp.com/products`, {
+		fetch(`https://tranquil-sierra-40350.herokuapp.com/products`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

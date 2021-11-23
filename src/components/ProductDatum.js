@@ -43,7 +43,7 @@ export default function ProductDatum(prop){
 
 	function sendUpdateStatus(){
 		console.log(isActive);
-		fetch(`http://tranquil-sierra-40350.herokuapp.com/products/${datum._id}/updateSatus`, {
+		fetch(`https://tranquil-sierra-40350.herokuapp.com/products/${datum._id}/updateSatus`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ export default function ProductDatum(prop){
 	function sendUpdateContent(e){
 		e.preventDefault();
 
-		fetch(`http://tranquil-sierra-40350.herokuapp.com/products/${datum._id}`, {
+		fetch(`https://tranquil-sierra-40350.herokuapp.com/products/${datum._id}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
