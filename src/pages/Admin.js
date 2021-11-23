@@ -12,7 +12,17 @@ import Swal from 'sweetalert2';
 export default function Admin(){
 
 	
-	const { forceRender, setForceRender, user, setUser, detectChange, setDetectChange, filterInput, setFilterInput } = useContext(UserContext);
+	const { 
+		forceRender, 
+		setForceRender, 
+		user, 
+		setUser, 
+		detectChange, 
+		setDetectChange, 
+		filterInput, 
+		setFilterInput,
+		api
+	} = useContext(UserContext);
 	const [ route, setRoute ] = useState('');
 	const [ products, setProducts ] = useState([]);
 	const [ productName, setProductName ] = useState('');
@@ -32,8 +42,8 @@ export default function Admin(){
 	console.log(filterInput)
 
 	useEffect(() => {
-		fetch('https://tranquil-sierra-40350.herokuapp.com/products/allBoth', {
-			mode: 'no-cors',
+		fetch(`${api}/products/allBoth`, {
+			
 			headers: {
 				Authorization: `Bearer ${ user.token }`
 			}
@@ -61,7 +71,8 @@ export default function Admin(){
 
 		let endpoint = 'orders';
 
-		fetch(`https://tranquil-sierra-40350.herokuapp.com/users/${endpoint}`, {
+		fetch(`${api}/users/${endpoint}`, {
+		
 			headers: {
 				Authorization: `Bearer ${ user.token }`
 			}
@@ -107,7 +118,8 @@ export default function Admin(){
 
 
 	function createProduct(){
-		fetch(`https://tranquil-sierra-40350.herokuapp.com/products`, {
+		fetch(`${api}/products`, {
+		
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

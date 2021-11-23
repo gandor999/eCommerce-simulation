@@ -7,7 +7,7 @@ export default function ProductDatum(prop){
 
 	let { datum } = prop;
 	let content = [];
-	const { forceRender, setForceRender, user, setUser } = useContext(UserContext);
+	const { forceRender, setForceRender, user, setUser, api } = useContext(UserContext);
 	const [ isActive, setIsActive ] = useState(datum.isActive);
 	const [ productName, setProductName ] = useState(datum.name);
 	const [ productPrice, setProductPrice ] = useState(datum.price);
@@ -43,8 +43,8 @@ export default function ProductDatum(prop){
 
 	function sendUpdateStatus(){
 		console.log(isActive);
-		fetch(`https://tranquil-sierra-40350.herokuapp.com/products/${datum._id}/updateSatus`, {
-			mode: 'no-cors',
+		fetch(`${api}/products/${datum._id}/updateSatus`, {
+			
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -81,8 +81,8 @@ export default function ProductDatum(prop){
 	function sendUpdateContent(e){
 		e.preventDefault();
 
-		fetch(`https://tranquil-sierra-40350.herokuapp.com/products/${datum._id}`, {
-			mode: 'no-cors',
+		fetch(`${api}/products/${datum._id}`, {
+			
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',

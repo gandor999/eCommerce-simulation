@@ -10,7 +10,7 @@ import UserProvider from '../UserContext';
 
 export default function Product(){
 
-	const {user, setUser, forceRender, setForceRender, filterInput, setFilterInput, detectChange, setDetectChange } = useContext(UserContext);	
+	const {user, setUser, forceRender, setForceRender, filterInput, setFilterInput, detectChange, setDetectChange, api } = useContext(UserContext);	
 	const [ products, setProducts ] = useState([]);
 	const [ tempArray, setTempArray ] = useState(JSON.parse(localStorage.getItem('cart')))
 
@@ -28,8 +28,8 @@ export default function Product(){
 
 
 	useEffect(() => {
-		fetch('https://tranquil-sierra-40350.herokuapp.com/products/all', {
-			mode: 'no-cors',
+		fetch(`${api}/products/all`, {
+			
 			headers: {
 				Authorization: `Bearer ${ peekingToken }`
 			}

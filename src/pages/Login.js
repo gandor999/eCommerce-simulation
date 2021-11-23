@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 
 export default function Login(props){
 
-	const {user, setUser} = useContext(UserContext);
+	const {user, setUser, api} = useContext(UserContext);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [isActive, setIsActive] = useState(false);
@@ -17,8 +17,8 @@ export default function Login(props){
 	function authenticate(e){
 		e.preventDefault();
 
-		fetch('https://tranquil-sierra-40350.herokuapp.com/users/login', {
-			mode: 'no-cors',
+		fetch(`${api}/users/login`, {
+			
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -62,8 +62,8 @@ export default function Login(props){
 
 
 	const retrieveUserDetails = (token) => {
-		fetch('https://tranquil-sierra-40350.herokuapp.com/users/details', {
-			mode: 'no-cors',
+		fetch(`${api}/users/details`, {
+			
 			headers: {
 				Authorization: `Bearer ${ token }`
 			}

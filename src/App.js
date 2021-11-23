@@ -27,6 +27,7 @@ function App() {
   const [forceRender, setForceRender] = useState(0);
   const [detectChange, setDetectChange] = useState(false);
   const [ filterInput, setFilterInput ] = useState('');
+  const [ api, setApi ] = useState('https://tranquil-sierra-40350.herokuapp.com');
 
   console.log(detectChange)
 
@@ -44,7 +45,19 @@ function App() {
 
   return (
 
-    <UserProvider value={{user, setUser, unsetUser, forceRender, setForceRender, detectChange, setDetectChange, filterInput, setFilterInput}}>
+    <UserProvider value={{
+      user, 
+      setUser, 
+      unsetUser, 
+      forceRender, 
+      setForceRender, 
+      detectChange, 
+      setDetectChange, 
+      filterInput, 
+      setFilterInput,
+      api,
+      setApi
+    }}>
       <Router>
         <AppNavbar />
         <Container>

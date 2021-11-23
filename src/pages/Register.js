@@ -12,6 +12,8 @@ export default function Register(){
 	
 	let history = useHistory();
 
+	const { api } = useContext(UserContext);
+
 	const [firstName, setfirstName] = useState('');
 	const [lastName, setlastName] = useState('');
 	const [email, setEmail] = useState('');
@@ -28,8 +30,8 @@ export default function Register(){
 	function registerUser(e){
 		e.preventDefault();
 
-		fetch('https://tranquil-sierra-40350.herokuapp.com/users/register', {
-			mode: 'no-cors',
+		fetch(`${api}/users/register`, {
+			
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

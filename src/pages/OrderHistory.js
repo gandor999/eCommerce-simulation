@@ -8,7 +8,7 @@ import Filter from '../components/Filter';
 
 export default function OrderHistory(prop){
 
-	const {user, setUser, filterInput, setFilterInput} = useContext(UserContext);
+	const {user, setUser, filterInput, setFilterInput, api} = useContext(UserContext);
 	const [ orderTickets, setOrderTickets ]  = useState([]);
 
 	let endpoint = 'myOrders';
@@ -19,8 +19,8 @@ export default function OrderHistory(prop){
 
 
 	useEffect(() => {
-		fetch(`https://tranquil-sierra-40350.herokuapp.com/users/${endpoint}`, {
-			mode: 'no-cors',
+		fetch(`${api}/users/${endpoint}`, {
+			
 			headers: {
 				Authorization: `Bearer ${ user.token }`
 			}

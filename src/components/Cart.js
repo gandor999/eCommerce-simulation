@@ -16,7 +16,7 @@ export default function Cart (prop){
 	let history = useHistory();
 
 
-	const { user, forceRender, setForceRender, setDetectChange, detectChange } = useContext(UserContext);
+	const { user, forceRender, setForceRender, setDetectChange, detectChange, api } = useContext(UserContext);
 
 	let tempArray = prop.tempArray
 
@@ -71,8 +71,8 @@ export default function Cart (prop){
 	function checkout(){
 		
 
-		fetch('https://tranquil-sierra-40350.herokuapp.com/users/checkout', {
-			mode: 'no-cors',
+		fetch(`${api}/users/checkout`, {
+			
 			method: 'POST',
 			headers: {
 				Authorization: `Bearer ${ user.token }`,
