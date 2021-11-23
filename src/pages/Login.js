@@ -63,6 +63,7 @@ export default function Login(props){
 
 	const retrieveUserDetails = (token) => {
 		fetch('https://tranquil-sierra-40350.herokuapp.com/users/details', {
+			mode: 'no-cors',
 			headers: {
 				Authorization: `Bearer ${ token }`
 			}
