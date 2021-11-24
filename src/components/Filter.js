@@ -12,7 +12,7 @@ export default function Filter(prop){
 			<Col className="p-5"> 
 				<InputGroup className="mb-3 col-md-6">
 				    <Form.Control
-				      placeholder="Filter"
+				      placeholder="Search"
 				      aria-label="Username"
 				      aria-describedby="basic-addon1"
 				      onChange={(e) => {

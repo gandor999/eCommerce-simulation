@@ -38,7 +38,7 @@ export default function Home(){
 
 								<div id="para4" className="mr-md-auto text-center rounded-pill mt-5">
 									<p className="pt-2">
-										<Link className="text-dark" to="/products"><h4>Products!</h4></Link>
+										<Link className="text-dark" to="/products"><h4>What we got!</h4></Link>
 									</p>
 								</div>						
 							</div>
@@ -49,19 +49,19 @@ export default function Home(){
 
 							<div id="para4" className="mr-md-auto text-center rounded-pill mt-5">
 								<p className="pt-2">
-									<Link className="text-dark" to="/products"><h4>Products!</h4></Link>
+									<Link className="text-dark" to="/products"><h4>What we got!</h4></Link>
 								</p>
 							</div>
 
 							<div id="para3" className="ml-md-auto text-center rounded-pill mt-5">
 								<p className="pt-2">
-									<Link className="text-dark" to="/login"><h4>Login</h4></Link>
+									<strong>Login</strong> <Link className="text-dark" to="/login">here</Link> 
 								</p>
 							</div>
 
 							<div id="para2" className="ml-md-5 text-center rounded-pill mt-5">
 								<p className="pt-2"> 
-								  <Link className="text-dark" to="/register"><h4>Register</h4></Link>
+								  <strong>Register</strong> <Link className="text-dark" to="/register">here</Link>
 								</p>
 							</div>
 						</div>
