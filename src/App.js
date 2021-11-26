@@ -16,6 +16,7 @@ import Logout from './pages/Logout';
 import { UserProvider } from './UserContext';
 
 
+
 function App() {
 
   const [user, setUser] = useState({
@@ -24,6 +25,7 @@ function App() {
     token: localStorage.getItem('token')
   })
 
+  const [ products, setProducts ] = useState([]);
   const [forceRender, setForceRender] = useState(0);
   const [detectChange, setDetectChange] = useState(false);
   const [ filterInput, setFilterInput ] = useState('');
@@ -44,6 +46,22 @@ function App() {
   }, [user])
 
 
+
+  useEffect(() => {
+    fetch(`${api}/products/all`, {
+      
+      headers: {
+        Authorization: `Bearer ${ peekingToken }`
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      
+    })
+  }, [filterInput]) 
+
+
   return (
 
     <UserProvider value={{
@@ -58,7 +76,9 @@ function App() {
       setFilterInput,
       api,
       setApi,
-      peekingToken
+      peekingToken,
+      products,
+      setProducts
     }}>
       <Router>
         <AppNavbar />

@@ -10,8 +10,21 @@ import UserProvider from '../UserContext';
 
 export default function Product(){
 
-	const {user, setUser, forceRender, setForceRender, filterInput, setFilterInput, detectChange, setDetectChange, api, peekingToken } = useContext(UserContext);	
-	const [ products, setProducts ] = useState([]);
+	const {
+		user, 
+		setUser, 
+		forceRender, 
+		setForceRender, 
+		filterInput, 
+		setFilterInput, 
+		detectChange, 
+		setDetectChange, 
+		api, 
+		peekingToken,
+		products,
+		setProducts 
+	} = useContext(UserContext);	
+	
 	const [ tempArray, setTempArray ] = useState(JSON.parse(localStorage.getItem('cart')))
 
 	// This token will be for viewing while not logged in purposes
@@ -53,7 +66,7 @@ export default function Product(){
 				);
 			
 		})
-	}, [filterInput])
+	}, [filterInput]) 
 
 
 	return (
