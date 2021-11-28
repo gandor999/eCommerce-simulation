@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState, useContext } from 'react';
 import Filter from '../components/Filter'
 import ProductCard from '../components/ProductCard';
-import { Button, Row, Col, Card, Container } from 'react-bootstrap';
+import { Button, Row, Col, Card, Container, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Cart from '../components/Cart';
 import UserContext from '../UserContext';
@@ -25,7 +25,8 @@ export default function Product(){
 		setProducts 
 	} = useContext(UserContext);	
 	
-	const [ tempArray, setTempArray ] = useState(JSON.parse(localStorage.getItem('cart')))
+	const [ tempArray, setTempArray ] = useState(JSON.parse(localStorage.getItem('cart')));
+	const [ isLoading, setIsLoading ] = useState(false);
 
 	// This token will be for viewing while not logged in purposes
 	
@@ -40,8 +41,10 @@ export default function Product(){
 	}, [tempArray, detectChange])
 
 
-	useEffect(() => {
-		fetch(`${api}/products/all`, {
+	useEffect(async () => {
+		setIsLoading(true);
+
+		await fetch(`${api}/products/all`, {
 			
 			headers: {
 				Authorization: `Bearer ${ peekingToken }`
@@ -65,13 +68,16 @@ export default function Product(){
 					})
 				);
 			
+			setIsLoading(false);
 		})
+
+		
+
 	}, [filterInput]) 
 
 
 	return (
 		<Fragment>
-	
 			<Fragment>
 				<div className="text-md-left text-center d-flex flex-column flex-md-row">
 						<div className="mt-5 product-header p-3 px-5 rounded-pill">
@@ -84,11 +90,22 @@ export default function Product(){
 						</div>
 					</div>
 				</div>
-				
 				<Filter />
-				<Row className="mt-3 mb-3 card-deck">
-					{products}
-				</Row>	
+				{
+					(isLoading) ?
+						<Spinner className="mt-5 m-5 align-self-center" animation="border" role="status">
+						  <span className="sr-only">Loading...</span>
+						</Spinner>
+					:
+						<div>
+							
+							<Row className="mt-3 mb-3 card-deck">
+								{products}
+							</Row>
+						</div>
+				}
+				
+				
 			</Fragment>
 		</Fragment>		
 	)

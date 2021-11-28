@@ -30,6 +30,8 @@ export default function Admin(){
 	const [ productDescription, setProductDescription ] = useState('');
 	const [ productImage, setProductImage ] = useState('');
 	const [ orderTickets, setOrderTickets ]  = useState([]);
+	const [ isLoading, setIsLoading ] = useState(false);
+
 	const [ show, setShow ] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -41,8 +43,10 @@ export default function Admin(){
 	console.log(productDescription);
 	console.log(filterInput)
 
-	useEffect(() => {
-		fetch(`${api}/products/allBoth`, {
+	useEffect(async () => {
+		setIsLoading(true);
+
+		await fetch(`${api}/products/allBoth`, {
 			
 			headers: {
 				Authorization: `Bearer ${ user.token }`
@@ -111,7 +115,7 @@ export default function Admin(){
 				setDetectChange(false);
 		})
 
-		
+		setIsLoading(false);
 		
 	}, [filterInput, detectChange])
 

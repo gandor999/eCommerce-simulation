@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState, useContext } from 'react';
-import { Button, Row, Col, Card, Container } from 'react-bootstrap';
+import { Button, Row, Col, Card, Container, Spinner } from 'react-bootstrap';
 import UserContext from '../UserContext';
 import OrderTicket from '../components/OrderTicket';
 import Filter from '../components/Filter';
@@ -10,6 +10,7 @@ export default function OrderHistory(prop){
 
 	const {user, setUser, filterInput, setFilterInput, api} = useContext(UserContext);
 	const [ orderTickets, setOrderTickets ]  = useState([]);
+	const [ isLoading, setIsLoading ] = useState(false);
 
 	let endpoint = 'myOrders';
 
@@ -18,8 +19,10 @@ export default function OrderHistory(prop){
 	}
 
 
-	useEffect(() => {
-		fetch(`${api}/users/${endpoint}`, {
+	useEffect(async() => {
+		setIsLoading(true);
+
+		await fetch(`${api}/users/${endpoint}`, {
 			
 			headers: {
 				Authorization: `Bearer ${ user.token }`
@@ -56,7 +59,7 @@ export default function OrderHistory(prop){
 					})
 				);
 			
-			
+			setIsLoading(false);
 		})
 	}, [filterInput]) 
 
@@ -74,18 +77,34 @@ export default function OrderHistory(prop){
 						<div>
 							<Filter />
 						</div>
-						<Row className="">
-							{orderTickets}
-						</Row>
+						{
+							(isLoading) ?
+								<Spinner className="mt-5 m-5 align-self-center" animation="border" role="status">
+								  <span className="sr-only">Loading...</span>
+								</Spinner>
+							:
+								<Row className="">
+									{orderTickets}
+								</Row>
+						}
 					</Fragment>
 				:
 					<Fragment>
 						<div>
 							<Filter />
 						</div>
-						<Row className="">
-							{orderTickets}
-						</Row>
+
+						{
+							(isLoading) ?
+								<Spinner className="mt-5 m-5 align-self-center" animation="border" role="status">
+								  <span className="sr-only">Loading...</span>
+								</Spinner>
+							:
+								<Row className="">
+									{orderTickets}
+								</Row>
+						}
+						
 					</Fragment>
 			}	
 			
