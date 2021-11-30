@@ -7,6 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 document.body.style.backgroundColor = '#F06543';
 
+localStorage.setItem('cart', JSON.stringify([]));
+localStorage.setItem('token', JSON.stringify())
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,7 +18,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-let remover = document.querySelector(".preorder");
 
 
 
